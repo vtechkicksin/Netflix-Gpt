@@ -7,12 +7,12 @@ import {
 } from "firebase/auth";
 import { auth } from "../utils/firebase";
 import { checkValidData } from "../utils/validate";
-import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addUser } from "../utils/userSlice";
+import { USER_AVTAR } from "../utils/constants";
 
 const Login = () => {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const [isSignInForm, setIsSignInForm] = useState(true);
   const [errorMessage, setErrorMessage] = useState(null);
   const name = useRef(null);
@@ -39,7 +39,7 @@ const Login = () => {
           console.log(user);
           updateProfile(user, {
             displayName: name.current.value,
-            photoURL: "https://avatars.githubusercontent.com/u/50988784?v=4",
+            photoURL: USER_AVTAR,
           })
             .then(() => {
               const { uid, email, displayName, photoURL } = auth.currentUser;
