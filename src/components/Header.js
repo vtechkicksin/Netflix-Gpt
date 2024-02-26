@@ -9,7 +9,6 @@ const Header = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const user = useSelector((store) => store.user);
-  console.log("", user);
   const handleSignOut = () => {
     signOut(auth)
       .then(() => {
@@ -22,7 +21,6 @@ const Header = () => {
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
-      console.log("on auth change", user);
       if (user) {
         const { uid, email, displayName, photoURL } = user;
         dispatch(

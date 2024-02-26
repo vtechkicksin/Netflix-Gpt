@@ -23,7 +23,7 @@ const Login = () => {
   const handleButton = () => {
     // validate form data
     const message = checkValidData(email.current.value, password.current.value);
-    // console.log(message);
+
     setErrorMessage(message);
     if (message) return;
     if (!isSignInForm) {
@@ -36,7 +36,7 @@ const Login = () => {
         .then((userCredential) => {
           // Signed up
           const user = userCredential.user;
-          console.log(user);
+          // user;
           updateProfile(user, {
             displayName: name.current.value,
             photoURL: USER_AVTAR,
@@ -51,11 +51,10 @@ const Login = () => {
                   photoURL: photoURL,
                 })
               );
-              console.log("this is what");
+
               // navigate("/Browse");
             })
             .catch((error) => {
-              console.log("UpdateProfile is failing");
               setErrorMessage(error.message);
               // An error occurred
               // ...
@@ -79,7 +78,7 @@ const Login = () => {
         .then((userCredential) => {
           // Signed in
           const user = userCredential.user;
-          console.log("user sandeep>>>>>", user);
+
           // navigate("/Browse");
         })
         .catch((error) => {
