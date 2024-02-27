@@ -1,3 +1,23 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+body {
+  margin: auto;
+  overflow-x: hidden;
+}
+
+/* Hide scrollbar for WebKit browsers */
+.scrollbar-hidden::-webkit-scrollbar {
+  width: 0;
+}
+
+/* Match scrollbar color with background */
+.scrollbar-hidden::-webkit-scrollbar-track {
+  background-color: transparent;
+}

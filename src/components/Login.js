@@ -9,7 +9,7 @@ import { auth } from "../utils/firebase";
 import { checkValidData } from "../utils/validate";
 import { useDispatch } from "react-redux";
 import { addUser } from "../utils/userSlice";
-import { USER_AVTAR } from "../utils/constants";
+import { USER_AVTAR, backgroundImg } from "../utils/constants";
 
 const Login = () => {
   // const navigate = useNavigate();
@@ -95,10 +95,7 @@ const Login = () => {
     <div>
       <Header />
       <div className="absolute">
-        <img
-          src="https://assets.nflxext.com/ffe/siteui/vlv3/df6621a3-890c-4ca0-b698-90bd5152f3d1/20a59be7-7062-4991-bca0-805e9a7f2716/IN-en-20240107-trifectadaily-perspective_alpha_website_large.jpg"
-          alt="Netflix-Background-logo"
-        />
+        <img src={backgroundImg} alt="Netflix-Background-logo" />
       </div>
       <form
         onSubmit={(e) => e.preventDefault()}
